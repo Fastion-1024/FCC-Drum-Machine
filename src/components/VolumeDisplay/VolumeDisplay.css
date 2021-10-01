@@ -1,0 +1,25 @@
+#volume {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.volume-indicator {
+    display: inline-block;
+    background-color: black;
+    margin: 0.2em;
+    width: 0.5em;
+    height: 0.5rem;
+    opacity: 0.2;
+    transition: opacity 0.2s ease-out;
+}
+
+.volume-indicator.active {
+    width: 0.5em;
+    height: 1em;
+    opacity: 0.75;
+}
+
+.volume-indicator.off {
+    opacity: 0.2;
+}
