@@ -1,0 +1,38 @@
+#drum-machine {
+    background-color: red;
+    height: 80%;
+    width: 80%;
+    padding: 1em;
+    display: grid;
+    grid-template-areas:
+        'display display'
+        'display display'
+        'power bank'
+        'volume volume'
+        'keypad keypad';
+    grid-template-rows: 2fr 1fr 1fr 1fr 5fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+#display-container {
+    grid-area: display;
+}
+
+#power {
+    grid-area: power;
+}
+
+#bank {
+    grid-area: bank;
+}
+
+.drum-pad-container {
+    grid-area: keypad;
+}
+
+/* Volume Slider */
+.volume-slider {
+    width: 95%;
+    background: none;
+    grid-area: volume;
+}
