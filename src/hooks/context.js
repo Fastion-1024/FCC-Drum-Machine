@@ -40,6 +40,7 @@ const AppProvider = ({ children }) => {
                 display,
                 volume,
                 setVolume,
+                updateDisplay,
             }}
         >
             {children}
