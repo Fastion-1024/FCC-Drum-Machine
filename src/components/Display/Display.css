@@ -1,0 +1,41 @@
+#display-container {
+    display: grid;
+    grid-template-areas:
+        'volume bank'
+        'main main';
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    width: 100%;
+    height: auto;
+    padding: 0.4em;
+    background-color: aliceblue;
+}
+
+#volume {
+    grid-area: volume;
+}
+
+/* Toggle Display Component */
+#toggle-display-container {
+    grid-area: bank;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.bank-indicator.active {
+    opacity: 1;
+}
+
+.bank-indicator,
+.bank-indicator.disabled {
+    opacity: 0.2;
+    transition: opacity 0.2s ease-out;
+}
+
+#display {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
