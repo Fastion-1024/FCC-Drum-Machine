@@ -1,7 +1,11 @@
 import React from 'react';
+import { useGlobalContext } from '../../hooks/context';
 import AudioButton from '../AudioButton/AudioButton';
+import './DrumPad.css';
 
-const DrumPad = ({ buttons, activeBank, power, volume, updateDisplay }) => {
+const DrumPad = () => {
+    const { buttons, activeBank, power, volume, updateDisplay } = useGlobalContext();
+
     return (
         <div className='drum-pad-container'>
             {buttons.map((btn, index) => {
