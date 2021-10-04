@@ -1,17 +1,17 @@
 #drum-machine {
     background-color: red;
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
     padding: 1em;
     display: grid;
     grid-template-areas:
         'display display'
-        'display display'
         'power bank'
         'volume volume'
         'keypad keypad';
-    grid-template-rows: 2fr 1fr 1fr 1fr 5fr;
+    grid-template-rows: 3fr 1fr 1fr 5fr;
     grid-template-columns: 1fr 1fr;
+    row-gap: 0.5em;
 }
 
 #display-container {
