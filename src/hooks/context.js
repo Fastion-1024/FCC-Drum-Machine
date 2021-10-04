@@ -1,5 +1,5 @@
 // Hooks
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import useToggle from './useToggle';
 import useLocalStorage from './useLocalStorage';
 // Data
@@ -13,6 +13,7 @@ const AppProvider = ({ children }) => {
     const [power, togglePower] = useToggle();
     const [display, setDisplay] = useState('');
     const [volume, setVolume] = useState(50);
+    const timeoutRef = useRef(null);
 
     const resetKeybinds = () => {
         setButtons(keybinds);
@@ -26,7 +27,16 @@ const AppProvider = ({ children }) => {
     };
 
     const updateDisplay = (value) => {
+        // Clear old timeout and ref
+        if (timeoutRef && timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
+
         setDisplay(value);
+        timeoutRef.current = setTimeout(() => {
+            updateDisplay('');
+        }, 3000);
     };
 
     return (
