@@ -2,22 +2,33 @@
 import { useGlobalContext } from '../../hooks/context';
 import Display from '../Display/Display';
 import DrumPad from '../DrumPad/DrumPad';
+import ToggleButton from '../ToggleButton/ToggleButton';
 // Stylsheets
 import './DrumMachine.css';
 
 const DrumMachine = () => {
-    const { power, togglePower, activeBank, toggleActiveBank, volume, setVolume } =
+    const { power, togglePower, activeBank, toggleActiveBank, volume, setVolume, updateDisplay } =
         useGlobalContext();
 
     return (
         <section id='drum-machine'>
             <Display />
-            <button id='power' onClick={togglePower}>
-                {power ? 'Turn Off' : 'Turn On'}
-            </button>
-            <button id='bank' onClick={toggleActiveBank} disabled={!power}>
-                {activeBank.name}
-            </button>
+            <ToggleButton
+                id='power'
+                name={'Power'}
+                checked={power}
+                onChange={() => {
+                    togglePower();
+                    updateDisplay(power ? 'Goodbye' : 'Hello');
+                }}
+            />
+            <ToggleButton
+                id='bank'
+                name={'Bank'}
+                checked={activeBank.name === 'Bank 1'}
+                onChange={toggleActiveBank}
+                disabled={!power}
+            />
             <input
                 className='volume-slider styled-slider slider-progress'
                 type='range'
