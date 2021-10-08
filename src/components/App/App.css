@@ -1,6 +1,46 @@
+:root {
+    /* CSS Variables */
+    /* Colours */
+    /* https://coolors.co/11052c-3d087b-f43b86-ffe459-fffcf9-51e5ff */
+
+    --clr-darkpurple-hue: 258;
+    --clr-darkpurple-sat: 80%;
+    --clr-darkpurple-lit: 10%;
+
+    --clr-purple-hue: 268;
+    --clr-purple-sat: 88%;
+    --clr-purple-lit: 26%;
+
+    --clr-rose-hue: 336;
+    --clr-rose-sat: 89%;
+    --clr-rose-lit: 59%;
+
+    --clr-yellow-hue: 50;
+    --clr-yellow-sat: 100%;
+    --clr-yellow-lit: 67%;
+
+    --clr-darkyellow-hue: 45;
+    --clr-darkyellow-sat: 94%;
+    --clr-darkyellow-lit: 61%;
+
+    --clr-white-hue: 30;
+    --clr-white-sat: 100%;
+    --clr-white-lit: 99%;
+
+    --clr-blue-hue: 189;
+    --clr-blue-sat: 100%;
+    --clr-blue-lit: 66%;
+
+    /* Fonts */
+    --fs-l: 2rem;
+    --fs-m: 1.5rem;
+    --fs-s: 1rem;
+    --fs-xs: 0.5rem;
+}
+
 * {
     margin: 0;
-    /* padding: 0; */
+    padding: 0;
     box-sizing: border-box;
 }
 
