@@ -5,12 +5,12 @@
         'main main';
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 3fr;
-    padding: 0.4em;
-    background-color: aliceblue;
+    background-color: hsl(var(--clr-white-hue), var(--clr-white-sat), var(--clr-white-lit));
 }
 
 #volume {
     grid-area: volume;
+    margin-left: 0.4em;
 }
 
 /* Toggle Display Component */
@@ -27,8 +27,11 @@
 
 .bank-indicator,
 .bank-indicator.disabled {
+    margin-top: 0.2em;
+    margin-right: 0.4em;
     opacity: 0.2;
     transition: opacity 0.2s ease-out;
+    color: hsl(var(--clr-darkpurple-hue), var(--clr-darkpurple-sat), var(--clr-darkpurple-lit));
 }
 
 #display {
@@ -36,4 +39,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: hsl(var(--clr-darkpurple-hue), var(--clr-darkpurple-sat), var(--clr-darkpurple-lit));
 }

@@ -6,10 +6,14 @@
 
 .volume-indicator {
     display: inline-block;
-    background-color: black;
-    margin: 0.2em;
+    background-color: hsl(
+        var(--clr-darkpurple-hue),
+        var(--clr-darkpurple-sat),
+        var(--clr-darkpurple-lit)
+    );
+    margin: 0 0.2em;
     width: 0.5em;
-    height: 0.5rem;
+    height: 0.5em;
     opacity: 0.2;
     transition: opacity 0.2s ease-out;
 }
