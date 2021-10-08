@@ -1,5 +1,6 @@
 // Components
 import { useGlobalContext } from '../../hooks/context';
+import useProgressSlider from '../../hooks/useProgressSlider';
 import Display from '../Display/Display';
 import DrumPad from '../DrumPad/DrumPad';
 import ToggleButton from '../ToggleButton/ToggleButton';
@@ -9,6 +10,8 @@ import './DrumMachine.css';
 const DrumMachine = () => {
     const { power, togglePower, activeBank, toggleActiveBank, volume, setVolume, updateDisplay } =
         useGlobalContext();
+
+    const [volumeProgressRef] = useProgressSlider();
 
     return (
         <section id='drum-machine'>
@@ -38,6 +41,7 @@ const DrumMachine = () => {
                 value={volume}
                 onChange={(e) => setVolume(e.target.value)}
                 disabled={!power}
+                ref={volumeProgressRef}
             />
             <DrumPad />
         </section>
