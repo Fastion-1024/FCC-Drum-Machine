@@ -41,7 +41,12 @@ const AudioButton = ({
     }, [volume, disabled]);
 
     return (
-        <button id={audioName} className='drum-pad' onClick={handleClick} disabled={disabled}>
+        <button
+            id={audioName}
+            className={`${disabled ? 'drum-pad disabled' : 'drum-pad'} `}
+            onClick={handleClick}
+            disabled={disabled}
+        >
             <audio id={value} className='clip' preload='auto' src={audioSource} ref={audioRef} />
             {value}
         </button>

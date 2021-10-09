@@ -1,27 +1,39 @@
 .drum-pad {
-    text-transform: capitalize;
+    /* Remove default button styling */
     background: none;
     border: none;
+
+    /* Default font styling */
     font-size: var(--fs-m);
     font-weight: 700;
-    color: hsl(var(--clr-blue-hue), var(--clr-blue-sat), var(--clr-blue-lit));
+    text-transform: capitalize;
     text-shadow: 0.1em 0.05em 0.05em
         hsl(var(--clr-darkpurple-hue), var(--clr-darkpurple-sat), var(--clr-darkpurple-lit));
+
+    /* Inset Shadow. Each button can adjust the css variable to their corrosponding colour */
+    box-shadow: inset 0 0 2px 2px var(--shadow-clr);
+    outline: 2px solid var(--outline-clr);
+    transition: transform 0.1s ease-in-out;
+}
+
+.drum-pad:not(.disabled):hover,
+.drum-pad:not(.disabled):focus {
+    transform: scale(0.95);
 }
 
 .drum-pad:nth-child(odd) {
     color: hsl(180, 100%, 73%);
-    background-color: hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit));
     background: linear-gradient(
         to bottom right,
         hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit)),
         hsl(var(--clr-rose-hue), var(--clr-rose-sat), 50%)
     );
-    outline: 2px solid hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), var(--clr-yellow-lit));
-    box-shadow: inset 0 0 2px 2px hsl(var(--clr-rose-hue), var(--clr-rose-sat), 40%);
+    --outline-clr: hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), var(--clr-yellow-lit));
+    --shadow-clr: hsl(var(--clr-rose-hue), var(--clr-rose-sat), 40%);
 }
 
-.drum-pad:nth-child(odd):hover {
+.drum-pad:nth-child(odd):not(.disabled):hover,
+.drum-pad:nth-child(odd):not(.disabled):focus {
     background: linear-gradient(
         to bottom right,
         hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit)) 49%,
@@ -30,21 +42,70 @@
 }
 
 .drum-pad:nth-child(even) {
-    color: hsl(189, 100%, 33%);
+    color: hsl(var(--clr-rose-hue), 80%, 48%);
     background: linear-gradient(
         to bottom right,
         hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), var(--clr-yellow-lit)),
         hsl(var(--clr-darkyellow-hue), var(--clr-darkyellow-sat), var(--clr-darkyellow-lit))
     );
 
-    outline: 2px solid hsl(var(--clr-blue-hue), var(--clr-blue-sat), var(--clr-blue-lit));
-    box-shadow: inset 0 0 2px 2px hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), 40%);
+    --outline-clr: hsl(var(--clr-blue-hue), var(--clr-blue-sat), var(--clr-blue-lit));
+    --shadow-clr: hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), 40%);
 }
 
-.drum-pad:nth-child(even):hover {
+.drum-pad:nth-child(even):not(.disabled):hover,
+.drum-pad:nth-child(even):not(.disabled):focus {
     background: linear-gradient(
         to bottom right,
         hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), 60%) 49%,
         hsl(var(--clr-darkyellow-hue), var(--clr-darkyellow-sat), 55%) 51%
     );
+}
+
+.drum-pad.disabled {
+    animation: turn-off 1.5s ease forwards;
+}
+
+.drum-pad:not(.disabled) {
+    animation: turn-on 1.5s steps(8) forwards;
+}
+
+@keyframes turn-on {
+    0% {
+        filter: brightness(0.8) saturate(0.6) contrast(0.75);
+    }
+    33% {
+        filter: brightness(1.1) saturate(1.1) contrast(1.1);
+    }
+    66% {
+        filter: brightness(0.85) saturate(0.65) contrast(0.8);
+    }
+    75% {
+        filter: brightness(1.05) saturate(1.05) contrast(1.05);
+    }
+    85% {
+        filter: brightness(0.9) saturate(0.75) contrast(0.9);
+    }
+    90% {
+        filter: brightness(1) saturate(1) contrast(1);
+    }
+    95% {
+        filter: brightness(0.95) saturate(0.85) contrast(0.95);
+    }
+    100% {
+        filter: brightness(1) saturate(1) contrast(1);
+    }
+}
+
+@keyframes turn-off {
+    0% {
+        filter: brightness(1) saturate(1) contrast(1);
+    }
+    90% {
+        filter: brightness(0.9) saturate(0.9) contrast(0.85);
+    }
+
+    100% {
+        filter: brightness(0.8) saturate(0.6) contrast(0.75);
+    }
 }
