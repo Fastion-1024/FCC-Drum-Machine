@@ -4,8 +4,8 @@
     border: none;
 
     /* Default font styling */
-    font-size: var(--fs-m);
-    font-weight: 700;
+    font-size: var(--fs-xl);
+    font-family: var(--ff-primary);
     text-transform: capitalize;
     text-shadow: 0.1em 0.05em 0.05em
         hsl(var(--clr-darkpurple-hue), var(--clr-darkpurple-sat), var(--clr-darkpurple-lit));

@@ -32,10 +32,13 @@
     --clr-blue-lit: 66%;
 
     /* Fonts */
-    --fs-l: 2rem;
-    --fs-m: 1.5rem;
+    --fs-xl: 2rem;
+    --fs-l: 1.5rem;
+    --fs-m: 1.2rem;
     --fs-s: 1rem;
-    --fs-xs: 0.5rem;
+    --fs-xs: 0.75rem;
+
+    --ff-primary: 'Black Ops One', monospace;
 }
 
 * {
@@ -50,4 +53,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: var(--ff-primary);
+    font-weight: 400;
 }
