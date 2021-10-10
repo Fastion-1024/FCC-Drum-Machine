@@ -1,3 +1,7 @@
+/*------------------------
+--Mobile-Layout-Portrait--
+------------------------*/
+
 #drum-machine {
     background: linear-gradient(
         to bottom right,
@@ -269,4 +273,31 @@ input[type='range'].styled-slider.slider-progress:hover::-ms-fill-lower {
 input[type='range'].styled-slider.slider-progress:active::-ms-fill-lower {
     background: hsl(var(--clr-lightblue-hue), var(--clr-lightblue-sat), var(--clr-lightblue-lit));
     border-color: #c1c1c1;
+}
+
+/*-------------------------
+--Mobile-Layout-Landscape--
+-------------------------*/
+
+@media only screen and (orientation: landscape) {
+    #drum-machine {
+        height: 100%;
+        width: 100%;
+        max-width: 60rem;
+        max-height: 40rem;
+        min-height: 20rem;
+
+        grid-template-areas:
+            'display power'
+            'display power'
+            'display bank'
+            'volume bank'
+            'keypad keypad';
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 4fr;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .volume-slider {
+        width: 100%;
+    }
 }

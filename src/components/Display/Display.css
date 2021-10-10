@@ -1,3 +1,7 @@
+/*------------------------
+--Mobile-Layout-Portrait--
+------------------------*/
+
 #display-container {
     display: grid;
     grid-template-areas:
@@ -43,4 +47,19 @@
     align-items: center;
     color: hsl(var(--clr-darkpurple-hue), var(--clr-darkpurple-sat), var(--clr-darkpurple-lit));
     font-size: var(--fs-xl);
+}
+
+/*-------------------------
+--Mobile-Layout-Landscape--
+-------------------------*/
+
+@media only screen and (orientation: landscape) {
+    #display-container {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr fr;
+    }
+
+    #toggle-display-container {
+        flex-direction: row;
+    }
 }

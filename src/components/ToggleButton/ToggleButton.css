@@ -1,3 +1,7 @@
+/*------------------------
+--Mobile-Layout-Portrait--
+------------------------*/
+
 .toggle-button-container {
     display: flex;
     flex-direction: column;
@@ -93,4 +97,22 @@ input:checked + .slider:before {
     -webkit-transform: translate(var(--x), -50%);
     -ms-transform: translate(var(--x), -50%);
     transform: translate(var(--x), -50%);
+}
+
+/*-------------------------
+--Mobile-Layout-Landscape--
+-------------------------*/
+
+@media only screen and (orientation: landscape) {
+    .toggle-button-container {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: baseline;
+        padding-right: 0.5em;
+    }
+
+    .switch-label {
+        margin-bottom: 0;
+        margin-right: 1em;
+    }
 }
