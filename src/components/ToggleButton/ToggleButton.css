@@ -3,22 +3,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    /* Toggle Switch Variables */
+    --switch-width: 4rem;
+    --switch-height: 1rem;
+    --slider-width: 1.2rem;
+    --switch-padding: 0.25rem;
 }
 
 .switch-label {
-    font-weight: 600;
-    margin-bottom: 0.2em;
+    font-weight: 400;
+    font-size: var(--fs-m);
+    text-shadow: 1px 1px hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit));
     color: hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), var(--clr-yellow-lit));
+    margin-bottom: 1em;
 }
 
 /* The switch - the box around the slider */
 .switch {
-    /* Toggle Switch Variables */
-    --switch-width: 4rem;
-    --switch-height: 1.8rem;
-    --slider-width: 1.5rem;
-    --switch-padding: 0.25rem;
-
     position: relative;
     display: inline-block;
     width: var(--switch-width);
@@ -40,33 +42,50 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    background-color: #bbb;
+    box-shadow: inset 0px 0px 1px 2px #aaa;
+    transition: background 0.4s ease;
+    outline: 1px solid hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), var(--clr-yellow-lit));
 }
 
 .slider:before {
     position: absolute;
     content: '';
     width: var(--slider-width);
-    /* height: var(--slider-height); */
-    /* height: var(calc(1.5rem - 0.2rem)); */
-    height: calc(var(--switch-height) - (2 * var(--switch-padding)));
+    /* Uncomment line below. Slider will be constrained by switch height */
+    /* height: calc(var(--switch-height) - (2 * var(--switch-padding))); */
+    /* Uncomment line below. Slider will exceed switch height */
+    height: calc((var(--switch-height) * 1) + (2.5 * var(--switch-padding)));
 
     left: var(--switch-padding);
     top: calc(50%);
-    background-color: hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit));
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    background: linear-gradient(
+        to bottom right,
+        hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit)),
+        hsl(var(--clr-rose-hue), var(--clr-rose-sat), 50%)
+    );
+    box-shadow: inset 0px 0px 1px 1px hsl(var(--clr-rose-hue), var(--clr-rose-sat), 40%);
+    outline: 1px solid hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), var(--clr-yellow-lit));
     transform: translate(0, -50%);
+    transition: transform 0.4s ease;
 }
 
 input:checked + .slider {
-    background-color: hsl(var(--clr-blue-hue), var(--clr-blue-sat), var(--clr-blue-lit));
+    background-color: hsl(
+        var(--clr-lightblue-hue),
+        var(--clr-lightblue-sat),
+        var(--clr-lightblue-lit)
+    );
+    box-shadow: inset 0px 0px 1px 2px hsl(var(--clr-blue-hue), var(--clr-blue-sat), 50%);
 }
 
-input:focus + .slider {
-    box-shadow: 0 0 1px hsl(var(--clr-blue-hue), var(--clr-blue-sat), var(--clr-blue-lit));
+.slider:hover::before,
+input:focus + .slider::before {
+    background: linear-gradient(
+        to bottom right,
+        hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit)) 49%,
+        hsl(var(--clr-rose-hue), var(--clr-rose-sat), 45%) 51%
+    );
 }
 
 input:checked + .slider:before {

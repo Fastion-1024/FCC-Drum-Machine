@@ -22,7 +22,7 @@
 }
 
 .drum-pad:nth-child(odd) {
-    color: hsl(180, 100%, 73%);
+    color: hsl(var(--clr-lightblue-hue), var(--clr-lightblue-sat), var(--clr-lightblue-lit));
     background: linear-gradient(
         to bottom right,
         hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit)),

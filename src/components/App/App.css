@@ -31,6 +31,10 @@
     --clr-blue-sat: 100%;
     --clr-blue-lit: 66%;
 
+    --clr-lightblue-hue: 180;
+    --clr-lightblue-sat: 100%;
+    --clr-lightblue-lit: 73%;
+
     /* Fonts */
     --fs-xl: 2rem;
     --fs-l: 1.5rem;
