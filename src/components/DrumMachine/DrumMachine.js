@@ -28,7 +28,7 @@ const DrumMachine = () => {
             <ToggleButton
                 id='bank'
                 name={'Bank'}
-                checked={activeBank.name === 'Bank 1'}
+                checked={activeBank.name === 'Bank 2'}
                 onChange={toggleActiveBank}
                 disabled={!power}
             />
