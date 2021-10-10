@@ -10,7 +10,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
     const [buttons, setButtons] = useLocalStorage('keybinds', keybinds);
     const [activeBank, toggleActiveBank] = useToggle(bankOne, bankTwo);
-    const [power, togglePower] = useToggle();
+    const [power, togglePower] = useToggle(false, true);
     const [display, setDisplay] = useState('');
     const [volume, setVolume] = useState(50);
     const timeoutRef = useRef(null);
