@@ -8,11 +8,12 @@
         hsl(var(--clr-purple-hue), var(--clr-purple-sat), var(--clr-purple-lit)),
         hsl(var(--clr-purple-hue), var(--clr-purple-sat), 15%)
     );
-    height: 90%;
-    max-height: 40rem;
-    width: 90%;
-    max-width: 25rem;
-    padding: 1em;
+    height: 100%;
+    max-height: 50rem;
+    min-width: 18rem;
+    width: 100%;
+    max-width: 30rem;
+    padding: 1.2em;
     display: grid;
     grid-template-areas:
         'display display'
@@ -283,8 +284,8 @@ input[type='range'].styled-slider.slider-progress:active::-ms-fill-lower {
     #drum-machine {
         height: 100%;
         width: 100%;
-        max-width: 60rem;
-        max-height: 40rem;
+        max-width: 55rem;
+        max-height: 45rem;
         min-height: 20rem;
 
         grid-template-areas:
