@@ -59,4 +59,7 @@ main {
     align-items: center;
     font-family: var(--ff-primary);
     font-weight: 400;
+
+    background: linear-gradient(to bottom right, hsl(165 75% 60%), hsl(165, 75%, 30%));
+    /* background: hsl(165 75% 60%); */
 }

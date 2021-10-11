@@ -302,3 +302,29 @@ input[type='range'].styled-slider.slider-progress:active::-ms-fill-lower {
         width: 100%;
     }
 }
+
+/*-------------------------
+---------Max-Size----------
+-------------------------*/
+
+@media only screen and (min-width: 30rem) and (orientation: portrait),
+    only screen and (min-height: 45rem) and (orientation: landscape) {
+    #drum-machine {
+        border: 0.25em solid
+            hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), var(--clr-yellow-lit));
+        box-shadow: hsla(
+                    var(--clr-darkpurple-hue),
+                    var(--clr-darkpurple-sat),
+                    var(--clr-darkpurple-lit),
+                    0.3
+                )
+                0px 19px 38px,
+            hsla(
+                    var(--clr-darkpurple-hue),
+                    var(--clr-darkpurple-sat),
+                    var(--clr-darkpurple-lit),
+                    0.22
+                )
+                0px 15px 12px;
+    }
+}
