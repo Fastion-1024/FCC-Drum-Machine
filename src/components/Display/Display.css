@@ -61,5 +61,7 @@
 
     #toggle-display-container {
         flex-direction: row;
+        justify-content: flex-end;
+        margin-right: 0.4em;
     }
 }
