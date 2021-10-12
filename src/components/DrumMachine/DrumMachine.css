@@ -92,6 +92,8 @@ input[type='range'].styled-slider:focus::-webkit-slider-thumb:hover {
         hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), 60%) 49%,
         hsl(var(--clr-darkyellow-hue), var(--clr-darkyellow-sat), 55%) 51%
     );
+
+    outline: 0.2em solid hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit));
 }
 
 input[type='range'].styled-slider:hover::-webkit-slider-runnable-track {
@@ -160,6 +162,7 @@ input[type='range'].styled-slider:focus::-moz-range-thumb {
         hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), 60%) 49%,
         hsl(var(--clr-darkyellow-hue), var(--clr-darkyellow-sat), 55%) 51%
     );
+    outline: 0.2em solid hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit));
 }
 
 input[type='range'].styled-slider:hover::-moz-range-track {
@@ -241,6 +244,7 @@ input[type='range'].styled-slider:focus::-ms-thumb:hover {
         hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), 60%) 49%,
         hsl(var(--clr-darkyellow-hue), var(--clr-darkyellow-sat), 55%) 51%
     );
+    outline: 0.2em solid hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit));
 }
 
 input[type='range'].styled-slider:hover::-ms-track {

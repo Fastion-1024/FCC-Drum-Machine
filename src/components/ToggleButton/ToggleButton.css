@@ -99,6 +99,10 @@ input:checked + .slider:before {
     transform: translate(var(--x), -50%);
 }
 
+input:focus + .slider::before {
+    outline-width: 0.2em;
+}
+
 /*-------------------------
 --Mobile-Layout-Landscape--
 -------------------------*/
