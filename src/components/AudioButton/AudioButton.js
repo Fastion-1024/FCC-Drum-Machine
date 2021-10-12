@@ -11,6 +11,7 @@ const AudioButton = ({
     updateDisplay,
 }) => {
     const audioRef = useRef(null);
+    const didMountRef = useRef(false);
 
     const playSound = () => {
         if (audioRef) {
@@ -40,10 +41,24 @@ const AudioButton = ({
         };
     }, [volume, disabled]);
 
+    /* 
+        We use a ref to prevent the animation tied to the on off classes
+        from firing until after the first render.
+    */
+    const getClassNames = () => {
+        if (didMountRef.current) {
+            return `${disabled ? 'drum-pad off' : 'drum-pad on'} `;
+        } else {
+            didMountRef.current = true;
+            return 'drum-pad disabled';
+        }
+    };
+
     return (
         <button
             id={audioName}
-            className={`${disabled ? 'drum-pad disabled' : 'drum-pad'} `}
+            // className={`${disabled ? 'drum-pad disabled' : 'drum-pad'} `}
+            className={getClassNames()}
             onClick={handleClick}
             disabled={disabled}
         >

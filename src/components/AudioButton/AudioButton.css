@@ -16,8 +16,8 @@
     transition: transform 0.1s ease-in-out;
 }
 
-.drum-pad:not(.disabled):hover,
-.drum-pad:not(.disabled):focus {
+.drum-pad.on:hover,
+.drum-pad.on:focus {
     transform: scale(0.95);
 }
 
@@ -32,8 +32,8 @@
     --shadow-clr: hsl(var(--clr-rose-hue), var(--clr-rose-sat), 40%);
 }
 
-.drum-pad:nth-child(odd):not(.disabled):hover,
-.drum-pad:nth-child(odd):not(.disabled):focus {
+.drum-pad:nth-child(odd).on:hover,
+.drum-pad:nth-child(odd).on:focus {
     background: linear-gradient(
         to bottom right,
         hsl(var(--clr-rose-hue), var(--clr-rose-sat), var(--clr-rose-lit)) 49%,
@@ -53,8 +53,8 @@
     --shadow-clr: hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), 40%);
 }
 
-.drum-pad:nth-child(even):not(.disabled):hover,
-.drum-pad:nth-child(even):not(.disabled):focus {
+.drum-pad:nth-child(even).on:hover,
+.drum-pad:nth-child(even).on:focus {
     background: linear-gradient(
         to bottom right,
         hsl(var(--clr-yellow-hue), var(--clr-yellow-sat), 60%) 49%,
@@ -63,10 +63,14 @@
 }
 
 .drum-pad.disabled {
+    filter: brightness(0.8) saturate(0.6) contrast(0.75);
+}
+
+.drum-pad.off {
     animation: turn-off 1.5s ease forwards;
 }
 
-.drum-pad:not(.disabled) {
+.drum-pad.on {
     animation: turn-on 1.5s steps(8) forwards;
 }
 
